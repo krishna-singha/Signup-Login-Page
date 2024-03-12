@@ -1,0 +1,382 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: linear-gradient(67.2deg, rgba(37, 208, 199, 1) -7.5%, rgba(165, 90, 240, 1) 62.7%);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+
+    .logo {
+        a {
+            span {
+                font-size: 2rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+#container {
+    margin-top: 2rem;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#signup-form {
+    background-color: rgba(255, 255, 255, 0.555);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6rem;
+    border-radius: 1rem;
+    width: 70rem;
+    padding: 4rem 3rem;
+
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 45%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.639);
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        z-index: -1;
+    }
+    &>p {
+        display: none;
+    }
+
+    .info {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 2rem;
+            color: rgba(0, 0, 0, 0.748);
+            text-align: center;
+
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .btn {
+            margin-top: 3rem;
+            padding: 0.7rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: rgba(37, 208, 199, 1);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background-color: rgb(4, 139, 132);
+            }
+        }
+    }
+
+    .form {
+        width: 55%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            font-size: 2rem;
+            color: rgba(0, 0, 0, 0.748);
+            margin-bottom: 2rem;
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.9rem;
+
+            .inputs {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: relative;
+
+                input {
+                    width: 100%;
+                    padding: 1rem;
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    border-radius: 0.5rem;
+                    font-size: 1.1rem;
+
+                    &:focus {
+                        outline: 1px solid rgba(0, 0, 0, 0.6);
+                    }
+                }
+
+                small {
+                    margin-top: 0.2rem;
+                    margin-left: 0.5rem;
+                    font-size: 0.9rem;
+                    color: red;
+                    visibility: hidden;
+                }
+            }
+
+            #checkbox {
+                flex-direction: row;
+                align-items: center;
+                gap: 0.3rem;
+                margin-top: 1rem;
+
+                input {
+                    width: 1rem;
+                    padding: 0rem;
+                    border: none;
+                    border-radius: 0;
+                    cursor: pointer;
+                }
+
+                label {
+                    color: rgba(0, 0, 0, 0.6);
+                    font-size: 0.9rem;
+                }
+            }
+        }
+        .inputs.error {
+            input {
+                border: 1px solid rgba(255, 0, 0, 0.637);
+
+                &:focus {
+                    border: none;
+                }
+            }
+
+            small {
+                visibility: visible;
+            }
+        }
+    }
+}
+
+#submit-btn {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: rgba(37, 208, 199, 1);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: rgb(4, 139, 132);
+    }
+}
+
+#pass {
+    position: relative;
+
+    i {
+        position: absolute;
+        top: 25%;
+        right: 0.7rem;
+        cursor: pointer;
+    }
+}
+
+.another-methods {
+
+    p {
+        font-size: 1.1rem;
+        color: rgba(0, 0, 0, 0.6);
+        text-align: center;
+        margin: 1rem 0;
+    }
+
+    .social {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        a {
+            border: 0.5px solid rgba(0, 0, 0, 0.3);
+            border-radius: 50%;
+            padding: 0.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            i {
+                color: black;
+                font-size: 1.5rem;
+            }
+
+            &:hover {
+                transform: scale(1.15);
+            }
+        }
+    }
+}
+#devloper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+#devloper p {
+    color: rgba(0, 0, 255, 0.92);
+    font-size: 1.1rem;
+}
+
+#devloper a {
+    color: rgba(255, 255, 255, 0.695);
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1192px) {
+    #container {
+        padding: 0 2rem;
+    }
+    #signup-form {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 804px) {
+    header .logo a span {
+        font-size: 1.6rem;
+    }
+    #signup-form .info h1 {
+        font-size: 1.6rem;
+    }
+    #signup-form .info p {
+        font-size: 0.9rem;
+    }
+    #signup-form .info .btn {
+        font-size: 0.9rem;
+    }
+    #signup-form .form h2 {
+        font-size: 1.6rem;
+    }
+    #signup-form .form form .inputs input {
+        font-size: 0.9rem;
+    }
+    #submit-btn {
+        font-size: 0.9rem;
+    }
+    .another-methods p {
+        font-size: 0.9rem;
+    }
+    .another-methods .social a i {
+        font-size: 1.2rem;
+    }
+    .another-methods .social a {
+        width: 2rem;
+        height: 2rem;
+    }
+    #signup-form .form form #checkbox label {
+        font-size: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 694px) {
+    #signup-form {
+        flex-direction: column;
+    }
+    #signup-form .info {
+        display: none;
+    }
+    #signup-form::before {
+        width: 0;
+        height: 0;
+    }
+    #signup-form .form {
+        width: 100%;
+    }
+    #signup-form>p {
+        display: block;
+        font-size: 0.9rem;
+    }
+    #signup-form {
+        gap: 3rem;
+    }
+}
+@media screen and (max-width: 537px) {
+    #signup-form {
+        padding: 3.5rem 3rem;
+    }
+    #signup-form .form h2 {
+        font-size: 1.3rem;
+    }
+    #signup-form .form form .inputs input {
+        font-size: 0.8rem;
+    }
+    #signup-form > p {
+        font-size: 0.8rem;
+    }
+    #signup-form .form form .inputs small {
+        font-size: 0.7rem;
+    }
+    .password i {
+        top: 37%;
+        font-size: 0.8rem;
+    }
+    .error-msg span {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 369px) {
+    header {
+        padding: 1.2rem 1.5rem;
+    }
+    header .logo a span {
+        font-size: 1.4rem;
+    }
+    #submit-btn {
+        padding: 0.7rem;
+    }
+    #container {
+        padding: 0 1rem;
+    }
+    #signup-form {
+        padding: 3rem 2rem;
+    }
+}

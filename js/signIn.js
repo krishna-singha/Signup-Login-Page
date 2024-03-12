@@ -3,34 +3,26 @@ const username = document.getElementById('username');
 const password = document.getElementById('password');
 const errorMessages = document.querySelector('.error-msg');
 
-
-const loginSuccess = () => {
-    const Toast = Swal.mixin({
-        toast: true,
-        position: "bottom-end",
-        showConfirmButton: false,
-        timer: 10000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.onmouseenter = Swal.stopTimer;
-            toast.onmouseleave = Swal.resumeTimer;
-        }
-    });
-    Toast.fire({
-        icon: "success",
-        title: "Welcome back! You are now logged in."
-    });
-};
-
 const validate = () => {
-    const usernameValue = username.value.trim();
-    const passwordValue = password.value.trim();
-    
-    if (usernameValue === 'Nexus Info' && passwordValue === 'nexusInfo') {
-        loginSuccess();
-        loginForm.reset();
+    if (username.value.trim() === 'krishnasingha' && password.value.trim() === 'Krishna@1234') {
         if (errorMessages.style.display === 'block') {
             errorMessages.style.display = 'none';
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "bottom-end",
+                showConfirmButton: false,
+                timer: 10000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.onmouseenter = Swal.stopTimer;
+                    toast.onmouseleave = Swal.resumeTimer;
+                }
+            });
+            Toast.fire({
+                icon: "success",
+                title: "Welcome back! You are now logged in."
+            });
+            loginForm.reset();
         }
 
     } else {

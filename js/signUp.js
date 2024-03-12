@@ -12,7 +12,7 @@ form.addEventListener('submit', (event) => {
 
 const isUsername = (username) => {
     var pattern = /^[a-zA-Z0-9_]{5,}$/; // Allows letters, numbers, and underscores; minimum length of 5 characters
-    return pattern.test(username.trim());
+    return pattern.test(username);
 }
 
 const isEmail = (email) => {
@@ -63,7 +63,7 @@ const successMsg = () => {
                     icon: "success",
                     title: "Account creation successful! Welcome aboard."
                 });
-                // form.reset();
+                form.reset();
             }
         } else {
             return false;
@@ -86,6 +86,15 @@ const validate = () => {
         setSuccessFor(fullName);
     }
 
+    // Validate Email
+    if (emailValue === "") {
+        setErrorFor(email, 'Email cannot be blank.');
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Email is not valid.');
+    } else {
+        setSuccessFor(email);
+    }
+
     // Validate Username
     if (username.value === "") {
         setErrorFor(username, 'Username cannot be blank.');
@@ -94,15 +103,6 @@ const validate = () => {
         
     } else {
         setSuccessFor(username);
-    }
-
-    // Validate Email
-    if (emailValue === "") {
-        setErrorFor(email, 'Email cannot be blank.');
-    } else if (!isEmail(emailValue)) {
-        setErrorFor(email, 'Email is not valid.');
-    } else {
-        setSuccessFor(email);
     }
 
     // Validate Password

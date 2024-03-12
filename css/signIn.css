@@ -9,10 +9,11 @@
 
 body {
   background: linear-gradient(67.2deg, rgb(37, 208, 199) -7.5%, rgb(165, 90, 240) 62.7%);
+  min-height: 100vh;
 }
 
 header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -26,35 +27,9 @@ header .logo a span {
   font-size: 2rem;
   font-weight: bold;
 }
-header nav ul {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-}
-header nav ul li {
-  padding: 0.2rem;
-  border: 2px solid transparent;
-  position: relative;
-}
-header nav ul li a {
-  font-size: 1.1rem;
-}
-header nav ul li a::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 0;
-  background-color: rgba(0, 0, 0, 0.6);
-}
-header nav ul li a:hover::before {
-  width: 100%;
-  transition-duration: 1s;
-}
 
 #container {
-  min-height: 100vh;
+  margin-top: 3rem;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -66,8 +41,10 @@ header nav ul li a:hover::before {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 6rem;
   border-radius: 1rem;
   width: 70rem;
+  padding: 5rem 3rem;
   position: relative;
 }
 #signin-form::before {
@@ -86,7 +63,6 @@ header nav ul li a:hover::before {
 }
 #signin-form .info {
   width: 45%;
-  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -121,7 +97,6 @@ header nav ul li a:hover::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem;
 }
 #signin-form .form h2 {
   font-size: 2rem;
@@ -179,6 +154,9 @@ header nav ul li a:hover::before {
 }
 #signin-form .form form .sm-row .forget a:hover {
   color: rgba(0, 0, 255, 0.776);
+}
+#signin-form > p {
+  display: none;
 }
 
 #submit-btn {
@@ -252,3 +230,131 @@ header nav ul li a:hover::before {
 .another-methods .social a:hover {
   transform: scale(1.15);
 }
+
+#devloper {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#devloper p {
+  color: rgba(0, 0, 255, 0.92);
+  font-size: 1.1rem;
+}
+
+#devloper a {
+  color: rgba(255, 255, 255, 0.695);
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 1192px) {
+  #container {
+    padding: 0 2rem;
+  }
+  #signin-form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 804px) {
+  header .logo a span {
+    font-size: 1.6rem;
+  }
+  #signin-form .info h1 {
+    font-size: 1.6rem;
+  }
+  #signin-form .info p {
+    font-size: 0.9rem;
+  }
+  #signin-form .info .btn {
+    font-size: 0.9rem;
+  }
+  #signin-form .form h2 {
+    font-size: 1.6rem;
+  }
+  #signin-form .form form .inputs input {
+    font-size: 0.9rem;
+  }
+  #signin-form .form form .sm-row .remember input {
+    width: 0.7rem;
+  }
+  #signin-form .form form .sm-row .remember label {
+    font-size: 0.75rem;
+  }
+  #signin-form .form form .sm-row .forget a {
+    font-size: 0.75rem;
+  }
+  #submit-btn {
+    font-size: 0.9rem;
+  }
+  .another-methods p {
+    font-size: 0.9rem;
+  }
+  .another-methods .social a i {
+    font-size: 1.2rem;
+  }
+  .another-methods .social a {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+@media screen and (max-width: 694px) {
+  #signin-form {
+    flex-direction: column;
+  }
+  #signin-form .info {
+    display: none;
+  }
+  #signin-form::before {
+    width: 0;
+    height: 0;
+  }
+  #signin-form .form {
+    width: 100%;
+  }
+  #signin-form > p {
+    display: block;
+    font-size: 0.9rem;
+  }
+  #signin-form {
+    gap: 3rem;
+  }
+}
+@media screen and (max-width: 537px) {
+  #signin-form {
+    padding: 3.5rem 3rem;
+  }
+  #signin-form .form h2 {
+    font-size: 1.3rem;
+  }
+  #signin-form .form form .inputs input {
+    font-size: 0.8rem;
+  }
+  #signin-form > p {
+    font-size: 0.8rem;
+  }
+  .password i {
+    top: 37%;
+    font-size: 0.8rem;
+  }
+  .error-msg span {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 369px) {
+  header {
+    padding: 1.2rem 1.5rem;
+  }
+  header .logo a span {
+    font-size: 1.4rem;
+  }
+  #submit-btn {
+    padding: 0.7rem;
+  }
+  #container {
+    padding: 0 1rem;
+  }
+  #signin-form {
+    padding: 3rem 2rem;
+  }
+}/*# sourceMappingURL=signIn.css.map */
